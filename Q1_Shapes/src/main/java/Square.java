@@ -2,13 +2,22 @@ public class Square extends Shape {
 
     private double side;
     private double area;
-
+    private String shapeName;
     // constructor
-    public Square(double side) {
-        super("Square");
-        this.side = side;
-        this.area = Math.pow(side, 2);
 
+    public Square(String shapeName, double side) {
+        super(shapeName);
+        this.side = side;
+        this.shapeName = shapeName;
+        this.area = Math.pow(side, 2);
+    }
+
+    public String getShapeName() {
+        return shapeName;
+    }
+
+    public void setShapeName(String shapeName) {
+        this.shapeName = shapeName;
     }
 
     public double getSide() {
@@ -25,6 +34,7 @@ public class Square extends Shape {
         return "Square{" +
                 "side=" + side +
                 ", area=" + area +
+                ", shapeName='" + shapeName + '\'' +
                 '}';
     }
 }

@@ -3,18 +3,28 @@ public class Triangle extends Shape {
     private double side2;
     private double side3;
     private double area;
-    // constructor
+    private String shapeName;
 
-    public Triangle(double side1, double side2, double side3) {
-        super("Triangle");
+    // constructor
+    public Triangle(String shapeName, double side1, double side2, double side3) {
+        super(shapeName);
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
-
+        this.shapeName = shapeName;
         this.area = 0.5 * side1 * side2 * Math.sin(side3);
     }
 
     //getter and setter
+
+    public String getShapeName() {
+        return shapeName;
+    }
+
+    public void setShapeName(String shapeName) {
+        this.shapeName = shapeName;
+    }
+
     public double getSide1() {
         return side1;
     }
@@ -47,6 +57,7 @@ public class Triangle extends Shape {
                 ", side2=" + side2 +
                 ", side3=" + side3 +
                 ", area=" + area +
+                ", shapeName='" + shapeName + '\'' +
                 '}';
     }
 }

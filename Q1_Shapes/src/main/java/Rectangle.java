@@ -2,12 +2,22 @@ class Rectangle extends Shape {
     private double width;
     private double height;
     private double area;
+    private String shapeName;
 
-    public Rectangle(double width, double height) {
-        super("Rectangle");
+    public Rectangle(String shapeName, double width, double height) {
+        super(shapeName);
         this.width = width;
         this.height = height;
         this.area=width*height;
+        this.shapeName = shapeName;
+    }
+
+    public String getShapeName() {
+        return shapeName;
+    }
+
+    public void setShapeName(String shapeName) {
+        this.shapeName = shapeName;
     }
 
     public double getWidth() {
@@ -32,6 +42,7 @@ class Rectangle extends Shape {
                 "width=" + width +
                 ", height=" + height +
                 ", area=" + area +
+                ", shapeName='" + shapeName + '\'' +
                 '}';
     }
 }
